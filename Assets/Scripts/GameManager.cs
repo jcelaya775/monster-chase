@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    private string GAMEPLAY = "Gameplay";
+
     [SerializeField]
     private GameObject[] characters;
 
@@ -40,6 +42,9 @@ public class GameManager : MonoBehaviour
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-
+        if (scene.name == GAMEPLAY)
+        {
+            Instantiate(characters[CharIndex]);
+        }
     }
 }
